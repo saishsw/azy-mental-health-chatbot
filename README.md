@@ -2,7 +2,7 @@
 
 A specialized AI chatbot for AZY Mental, providing Arizona-focused mental health support with crisis intervention capabilities.
 
-## 🚨 Crisis Support
+## Crisis Support
 
 **If you're in crisis, please call:**
 - **988** - National Suicide Prevention Lifeline
@@ -11,17 +11,17 @@ A specialized AI chatbot for AZY Mental, providing Arizona-focused mental health
 
 ## Features
 
-### 🛡️ Safety First
+### Safety First
 - **Trigger Word Detection**: Automatically detects crisis keywords and immediately provides emergency resources
 - **Crisis Intervention**: Stops conversation and redirects to professional help when dangerous terms are detected
 - **Professional Referral**: Never attempts to handle emergencies alone
 
-### 🏜️ Arizona-Focused
+### Arizona-Focused
 - **Local Resources**: Comprehensive database of Arizona mental health clinics, therapists, and support groups
 - **Regional Hotlines**: State-specific crisis and support phone numbers
 - **Community Programs**: Information about local mental health initiatives
 
-### 💬 Intelligent Support
+### Intelligent Support
 - **Session Management**: Remembers conversation context within sessions
 - **Empathetic Responses**: AI-powered responses focused on support and guidance
 - **Resource Matching**: Connects users with appropriate local services
@@ -192,7 +192,7 @@ Bot: "I understand anxiety can be really challenging. In Phoenix, I'd recommend 
 ### Crisis Detection
 ```
 User: "I'm thinking about suicide and don't know what to do"
-Bot: 🚨 **CRISIS DETECTED - IMMEDIATE ACTION REQUIRED**
+Bot: **CRISIS DETECTED - IMMEDIATE ACTION REQUIRED**
 
 I've detected that you may be in crisis. Please know that you're not alone and help is available right now.
 
