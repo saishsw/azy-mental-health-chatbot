@@ -27,16 +27,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Configure OpenAI client for Llama4scout/CyVerse
+# Configure LLM client. Use Gemini-compatible model names when the configured
+# backend points at Google Generative Language.
 api_key = os.getenv("OPENAI_API_KEY")
+base_url = os.getenv("OPENAI_BASE_URL") or "https://api.openai.com/v1"
+
 if api_key:
     client = OpenAI(
         api_key=api_key,
-        base_url=os.getenv("OPENAI_BASE_URL")  # Set your CyVerse endpoint here
+        base_url=base_url
     )
 else:
     client = None
     print("WARNING: OPENAI_API_KEY not found. Chat endpoints will not function.")
+
+
+def get_model_name() -> str:
+    """Select a model name compatible with the configured provider."""
+    provider = (os.getenv("OPENAI_BASE_URL") or "").lower()
+    if "generativelanguage.googleapis.com" in provider:
+        return os.getenv("MODEL_NAME", "gemini-2.0-flash")
+    return os.getenv("MODEL_NAME", "js2/llama-4-scout")
 
 # In-memory session storage (in production, use Redis or database)
 sessions: Dict[str, Dict[str, Any]] = {}
@@ -207,7 +218,7 @@ Remember: You are here to support and guide users to appropriate Arizona resourc
         # Call OpenAI API
         try:
             response = client.chat.completions.create(
-                model="js2/llama-4-scout",
+                model=get_model_name(),
                 messages=messages,
                 max_tokens=300,
                 temperature=0.7

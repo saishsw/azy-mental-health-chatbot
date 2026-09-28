@@ -18,6 +18,14 @@ client = None
 if api_key:
     client = AsyncOpenAI(api_key=api_key, base_url=base_url)
 
+
+def get_model_name() -> str:
+    """Select a model name compatible with the configured provider."""
+    provider = (os.getenv("OPENAI_BASE_URL") or "").lower()
+    if "generativelanguage.googleapis.com" in provider:
+        return os.getenv("MODEL_NAME", "gemini-2.0-flash")
+    return os.getenv("MODEL_NAME", "js2/llama-4-scout")
+
 async def search_articles(query: str, limit: int = 3) -> List[Dict[str, Any]]:
     """
     Search for scholarly articles using the OpenAlex API.
@@ -106,7 +114,7 @@ async def assess_quality(article: Dict[str, Any]) -> Dict[str, Any]:
         """
         
         response = await client.chat.completions.create(
-            model="js2/llama-4-scout", # Updated to use supported model
+            model=get_model_name(),
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0,
             response_format={"type": "json_object"}
