@@ -137,8 +137,8 @@ export default function Research() {
                                         </a>
                                     </h3>
                                     <div className="text-sm text-beige-500 mb-3 flex flex-wrap gap-4">
-                                        <span>✍️ {article.authors}</span>
-                                        <span>📅 {article.date}</span>
+                                        <span>{article.authors}</span>
+                                        <span>{article.date}</span>
                                     </div>
                                     <p className="mb-4 leading-relaxed text-beige-700">
                                         {article.description}

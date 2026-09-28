@@ -177,11 +177,11 @@ export default function Home() {
   const formatResources = (resources: any[]) => {
     return resources.map(resource => {
       let text = `**${resource.name}**`
-      if (resource.number) text += `\n📞 ${resource.number}`
-      if (resource.phone) text += `\n📞 ${resource.phone}`
+      if (resource.number) text += `\n${resource.number}`
+      if (resource.phone) text += `\n${resource.phone}`
       if (resource.description) text += `\n${resource.description}`
-      if (resource.location) text += `\n📍 ${resource.location}`
-      if (resource.services) text += `\n💼 ${resource.services}`
+      if (resource.location) text += `\n${resource.location}`
+      if (resource.services) text += `\n${resource.services}`
       return text
     }).join('\n\n')
   }
@@ -354,7 +354,7 @@ export default function Home() {
 
               {/* Safety Notice */}
               <div className="mt-4 text-xs text-beige-600 text-center font-sans">
-                💙 This is a support tool, not a replacement for professional mental health care.
+                This is a support tool, not a replacement for professional mental health care.
                 If you're in crisis, please call 988 or text HOME to 741741.
               </div>
             </div>

@@ -47,7 +47,7 @@ export default function Portal() {
               onClick={() => track('portal_select', { option: 'chat' })}
               className="group bg-white rounded-3xl p-8 border border-beige-200 shadow-sm hover:shadow-xl transition-all hover:border-beige-400 flex flex-col items-center text-center cursor-pointer transform hover:-translate-y-1">
               <div className="w-20 h-20 bg-beige-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-beige-200 transition-colors">
-                <span className="text-4xl">💬</span>
+                <span className="text-2xl font-bold text-beige-700">Chat</span>
               </div>
               <h2 className="text-2xl font-bold font-serif text-beige-900 mb-3">AI Support Chat</h2>
               <p className="text-beige-600 leading-relaxed mb-6">
@@ -63,7 +63,7 @@ export default function Portal() {
               onClick={() => track('portal_select', { option: 'research' })}
               className="group bg-white rounded-3xl p-8 border border-beige-200 shadow-sm hover:shadow-xl transition-all hover:border-beige-400 flex flex-col items-center text-center cursor-pointer transform hover:-translate-y-1">
               <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
-                <span className="text-4xl">🔬</span>
+                <span className="text-2xl font-bold text-blue-700">Research</span>
               </div>
               <h2 className="text-2xl font-bold font-serif text-beige-900 mb-3">Research Hub</h2>
               <p className="text-beige-600 leading-relaxed mb-6">
