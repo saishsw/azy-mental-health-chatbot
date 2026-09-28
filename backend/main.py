@@ -46,7 +46,7 @@ def get_model_name() -> str:
     """Select a model name compatible with the configured provider."""
     provider = (os.getenv("OPENAI_BASE_URL") or "").lower()
     if "generativelanguage.googleapis.com" in provider:
-        return os.getenv("MODEL_NAME", "gemini-2.0-flash")
+        return os.getenv("MODEL_NAME", "gemini-3.8-flash")
     return os.getenv("MODEL_NAME", "js2/llama-4-scout")
 
 # In-memory session storage (in production, use Redis or database)
